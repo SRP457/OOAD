@@ -5,17 +5,17 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class usercontroller {
+public class dietcontroller {
 
-   static public int login(usermodel stud){
+   static public int login(dietmodel stud){
         try  {
             
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String select = "select userid,password from user where userid ='"+stud.userid +"' and password = '"+stud.userPassword+"'";
+            String select = "select dieticianid,password from dietician where dieticianid ='"+stud.dieticianid +"' and password = '"+stud.password+"'";
             ResultSet rs = st.executeQuery(select);
             if(rs.next()){
-                System.out.println("Login Successful and Logged in as userid "+stud.userid);
+                System.out.println("Login Successful and Logged in as userid "+stud.dieticianid);
                 con.close();
                 return 1;
                 
@@ -34,8 +34,8 @@ public class usercontroller {
         return 0;
     }
     
-    static public void register_user(){
-        usermodel.enter_user_details();
+    static public void register_dietician(){
+        dietmodel.enter_dietician_details();
     }
 
 }   

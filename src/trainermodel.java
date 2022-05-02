@@ -36,8 +36,7 @@ public class trainermodel {
             
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String ins = "INSERT INTO trainer VALUES ('" + stud.trainerid + "','"+ stud.trainerPassword + "','" + stud.firstName + "','" + stud.lastName + "','" +stud.phoneNumber+"','"
-            + stud.field  + "')";
+            String ins = "INSERT INTO trainer VALUES ('" + stud.trainerid + "','"+ stud.trainerPassword + "','" + stud.firstName + "','" + stud.lastName + "','" + stud.field+"','"+stud.phoneNumber+ "')";
             st.executeUpdate(ins);
 
             con.close();

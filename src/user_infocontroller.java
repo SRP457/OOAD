@@ -46,13 +46,13 @@ public class user_infocontroller {
 
     }
     
-    public static void set_user_info(){
-        user_infomodel.enter_user_info_details();
+    public static void set_user_exercise(String trainer_id){
+        user_infomodel.enter_user_info_details(trainer_id);
     }
 
-    public static void see_user_info(){
+    public static void see_user_info(String trainer_id){
 
-        user_infoview.get_user_info_info();
+        user_infoview.get_user_info(trainer_id);
 
     }
 }

@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class user_infoview {
 
-    public static void get_user_info_info(){
+    public static void get_user_info(String trainer_id){
         
 
         try  {
@@ -15,7 +15,7 @@ public class user_infoview {
             
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String select = "select * from user_info";
+            String select = "select * from trainer_user where trainer_id = " + trainer_id;
            
             int flag=1;
             ResultSet rs = st.executeQuery(select);
@@ -23,23 +23,13 @@ public class user_infoview {
             while(rs.next()){
                 flag=11;
                 String userid = rs.getString("userid");
-                String age=rs.getString("age");
-                String gender=rs.getString("gender");
-                String field=rs.getString("field");
-                String height=rs.getString("height");
-                String weight=rs.getString("weight");
-                String bmi=rs.getString("bmi");
+                String exercise_plan=rs.getString("exercise_plan");
 
-                System.out.println("Course Code     : "+userid);
-                System.out.println("Course Name     : "+age);
-                System.out.println("gender           : "+gender);
-                System.out.println("height    : "+height);
-                System.out.println("weight  : "+weight);
-                System.out.println("bmi   : "+bmi);
-                System.out.println("field      : "+field+"\n\n\n");
+                System.out.println("User Id     : "+userid);
+                System.out.println("Exercise Plan     : "+exercise_plan+"\n\n\n");
             }
             if(flag!=11){
-                System.out.println("No Question Paper Set\n\n");
+                System.out.println("No Users\n\n");
             }
             con.close();
             con.close();

@@ -15,7 +15,8 @@ create table user(
     password varchar(25),
     firstName varchar(25),
     lastName varchar(25),
-    phoneNumber varchar(25)
+    phoneNumber varchar(25),
+    package_type varchar(25)
 );
 
 create table trainer(

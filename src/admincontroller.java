@@ -91,14 +91,12 @@ public class admincontroller {
                 String lastName=rs.getString("lastName");
                 String phoneNumber=rs.getString("phoneNumber");
                 String package_type=rs.getString("package_type");
-                String field=rs.getString("field");
-
+                
                 System.out.println("user userid : "+userid);
                 System.out.println("Firstname   : "+firstName);
                 System.out.println("Lastname    : "+lastName);
-                System.out.println("PhoneNumber : "+phoneNumber);
-                System.out.println("package_type     : "+package_type);
-                System.out.println("field  : "+field+"\n\n");
+                System.out.println("Package Type    : "+package_type);
+                System.out.println("PhoneNumber : "+phoneNumber + "\n\n");
             }
 
             if(flag!=11){
@@ -128,18 +126,16 @@ public class admincontroller {
         stud.phoneNumber= sc.nextLine(); //reads string.
         System.out.println("Enter package_type: ");
         stud.package_type= sc.nextLine(); //reads string.
-        System.out.println("Enter New field: ");
-        stud.field= sc.nextLine(); //reads string.
         //sc.close();
 
         try  {
 
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String up="UPDATE user set firstName = '"+stud.firstName +"', lastName = '"+stud.lastName+"', phoneNumber = '"+stud.phoneNumber+"',package_type ='"+stud.package_type +"', field = '"+stud.field+"' where userid ="+stud.userid+"";
+            String up="UPDATE user set firstName = '"+stud.firstName +"', lastName = '"+stud.lastName+"', phoneNumber = '"+stud.phoneNumber+"',package_type ='"+stud.package_type +"' where userid ="+stud.userid;
             st.executeUpdate(up);
 
-            String select = "select userid,firstName,lastName,phoneNumber,package_type,field from user where userid = '"+stud.userid+"' and firstName = '"+stud.firstName+"' and lastName = '"+stud.lastName+"' and phoneNumber = '"+stud.phoneNumber+"' and package_type = '"+stud.package_type+"' and field = '"+stud.field+"'";
+            String select = "select userid,firstName,lastName,phoneNumber,package_type from user where userid = '"+stud.userid+"' and firstName = '"+stud.firstName+"' and lastName = '"+stud.lastName+"' and phoneNumber = '"+stud.phoneNumber+"' and package_type = '"+stud.package_type;
             ResultSet rs = st.executeQuery(select);
             if(rs.next()){
             System.out.println("Updated Successfully");

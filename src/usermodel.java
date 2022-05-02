@@ -30,16 +30,13 @@ public class usermodel {
         stud.phoneNumber= sc.nextLine(); //reads string.
         System.out.println("Enter package_type(regular/premium): ");
         stud.package_type= sc.nextLine(); //reads string.
-        System.out.println("Enter field: ");
-        stud.field= sc.nextLine(); //reads string.
         
 
         try  {
             
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String ins = "INSERT INTO user VALUES ('" + stud.userid+ "','"+ stud.userPassword + "','" + stud.firstName + "','" + stud.lastName + "','" +stud.phoneNumber+"','"+stud.package_type+"','"+
-            stud.field  + "')";
+            String ins = "INSERT INTO user VALUES ('" + stud.userid+ "','"+ stud.userPassword + "','" + stud.firstName + "','" + stud.lastName + "','" +stud.phoneNumber+"','"+stud.package_type+"')";
             st.executeUpdate(ins);
 
             con.close();
