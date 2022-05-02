@@ -38,4 +38,8 @@ public class dietcontroller {
         dietmodel.enter_dietician_details();
     }
 
+    static public void set_diet(String dieticianid){
+        dietmodel.set_user_diet(dieticianid);
+    }
+
 }   

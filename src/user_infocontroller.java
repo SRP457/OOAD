@@ -51,8 +51,6 @@ public class user_infocontroller {
     }
 
     public static void see_user_info(String trainer_id){
-
         user_infoview.get_user_info(trainer_id);
-
     }
 }

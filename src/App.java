@@ -291,11 +291,11 @@ public class App {
 
                                 switch(dietop){
                                     case "1" : //Course Registration
-                                    dietcontroller.set_diet(diet); 
+                                    dietcontroller.set_diet(diet.dieticianid); 
                                     break;
 
                                     case "2" : //Take Exam
-                                    dietcontroller.view_user(diet);
+                                    dietcontroller.set_diet(diet.dieticianid);
                                     break;
 
                                     case "3" : //logout
@@ -308,8 +308,8 @@ public class App {
                         
                         break;
 
-                        case "2": //Register user 
-                        usercontroller.register_user();
+                        case "2": //Register diet 
+                        dietcontroller.register_dietician();
                         break;
 
                         case "3": //Log out
@@ -320,7 +320,7 @@ public class App {
 
                     }
 
-                }while(studflag.equals("3"));
+                }while(dietflag.equals("3"));
 
                 break;
 
