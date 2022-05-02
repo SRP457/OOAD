@@ -54,7 +54,7 @@ public class dietmodel {
         try  {
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String ins = "INSERT INTO dieti_user VALUES ('" + dieticianid + "','" + stud.userid + "','" + stud.exercise_plan +"')";
+            String ins = "INSERT INTO diet_user VALUES ('" + dieticianid + "','" + stud.userid + "','" + stud.exercise_plan +"')";
             st.executeUpdate(ins);
 
             con.close();
