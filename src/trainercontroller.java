@@ -14,7 +14,7 @@ public class trainercontroller {
            
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String select = "select trainerid,trainerPassword from trainer where trainerid ="+teach.trainerid +" and trainerPassword = "+teach.trainerPassword;
+            String select = "select trainerid,password from trainer where trainerid ="+teach.trainerid +" and password = "+teach.trainerPassword;
             ResultSet rs = st.executeQuery(select);
             if(rs.next()){
                 System.out.println("Login Successful and Logged in as Admin Id "+teach.trainerid);
