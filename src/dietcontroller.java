@@ -42,4 +42,8 @@ public class dietcontroller {
         dietmodel.set_user_diet(dieticianid);
     }
 
+    static public void view_diet_users(String dieticianid){
+        dietmodel.view_users(dieticianid);
+    }
+
 }   

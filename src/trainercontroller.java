@@ -17,7 +17,7 @@ public class trainercontroller {
             String select = "select trainerid,password from trainer where trainerid ="+teach.trainerid +" and password = "+teach.trainerPassword;
             ResultSet rs = st.executeQuery(select);
             if(rs.next()){
-                System.out.println("Login Successful and Logged in as Admin Id "+teach.trainerid);
+                System.out.println("Login Successful and Logged in as trainer "+teach.trainerid);
                 con.close();
                 return 1;
                 

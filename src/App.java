@@ -14,7 +14,7 @@ public class App {
         do{
             System.out.println("Main Menu :");
             System.out.println("Login as :");
-            System.out.println("1) Admin \n2) User\n3) Trainer\n4) Dietician\n5) Exit \nEnter Your Option");
+            System.out.print("1)Admin 2)Trainer 3)User 4)Dietician 5)Exit \nEnter Your Option: ");
             option= reader.readLine();
             switch(option){
                 case "1": //Admin
@@ -23,17 +23,16 @@ public class App {
                 String adflag11="3";
                 do{
                     System.out.println("Admin Menu:");
-                    System.out.println("1) Login \n2) Register\n3) Exit\nEnter Option");
+                    System.out.print("1)Login  2)Register 3)Exit \nEnter Option: ");
                     adop1=reader.readLine();
 
                     switch(adop1){
-                        
-
+                    
                         case "1": 
                         Integer log;
-                        System.out.println("Enter Admin ID      :");
+                        System.out.print("Enter Admin ID: ");
                         ad.adminid= reader.readLine();
-                        System.out.println("Enter Admin Password:");
+                        System.out.print("Enter Admin Password: ");
                         ad.adminPassword= reader.readLine();
                         log=admincontroller.login(ad);
                         String adflag1="3";
@@ -42,7 +41,7 @@ public class App {
                             do{
                                 String adminop="5";
                                 System.out.println("Logged In Admin Menu:");
-                                System.out.println("1) View all users \n2) View all Gyms \n3) Update Exercise Details \n4) Update Gym Details \n5) Log out \nEnter Option:");
+                                System.out.print("1)View all users 2)View all Trainers 3)Update Trainer Details 4)Update User Details 5)Log out \nEnter Option: ");
                                 if(sc.hasNextLine())
                                 {
                                         adminop= sc.nextLine(); 
@@ -102,12 +101,12 @@ public class App {
                 int count=1;
                 String flag="3";
                 do{
-                    System.out.println("Trainer Menu:");
-                    System.out.println("1) Trainer Login \n2) Register Trainer \n3) Exit\nEnter Option");
+                    System.out.println("\n\nTrainer Menu:");
+                    System.out.print("1)Trainer Login 2)Register Trainer 3)Exit\nEnter Option: ");
                     if(sc.hasNextLine() & count!=1)
                     {
                     op1= sc.nextLine(); 
-                       } 
+                    } 
                                 
                     if(count==1){
                         count++;
@@ -117,16 +116,16 @@ public class App {
                     switch(op1){
                         case "1" : //Login
                         int log;
-                        System.out.println("Enter Trainer ID      :");
+                        System.out.print("Enter Trainer ID: ");
                         teach.trainerid= sc.nextLine(); 
-                        System.out.println("Enter Trainer Password:");
+                        System.out.print("Enter Trainer Password: ");
                         teach.trainerPassword= sc.nextLine(); 
                         log=trainercontroller.login(teach);
                         String trainerop,trainerop1="3";
                         if(log==1){
                             do{
-                                System.out.println("Logged In Trainer Menu:");
-                                System.out.println("1) Set Exercise\n2) View users\n3) Log out \nEnter Option:");
+                                System.out.println("\n\nLogged In Trainer Menu:");
+                                System.out.print("1)Set Exercise 2)View users 3)Log out \nEnter Option: ");
                                 trainerop= sc.next(); 
 
                                 switch(trainerop){
@@ -182,8 +181,8 @@ public class App {
                 String studflag="3";
 
                 do{
-                    System.out.println("User Menu:");
-                    System.out.println("1) User Login \n2) Register User\n3) Exit\nEnter Option");
+                    System.out.println("\n\nUser Menu:");
+                    System.out.print("1)User Login 2)Register User 3)Exit\nEnter Option: ");
                     if(sc.hasNextLine() & studcount!=1)
                     {
                     studop1= sc.nextLine(); 
@@ -196,16 +195,16 @@ public class App {
                     switch(studop1){
                         case "1": //login
                         int log;
-                        System.out.println("Enter User ID      :");
+                        System.out.print("Enter User ID: ");
                         stud.userid= sc.nextLine(); 
-                        System.out.println("Enter User Password:");
+                        System.out.print("Enter User Password: ");
                         stud.userPassword= sc.nextLine();
                         log=usercontroller.login(stud);
                         String studop,studop11="3";
                         if(log==1){
                             do{
-                                System.out.println(" Logged In User Menu:");
-                                System.out.println("1) Get exercises\n2) Get Diet\n3) Get trainers \n4) Get dieticians \n5) Log out \nEnter Option:");
+                                System.out.println("\n\nLogged In User Menu:");
+                                System.out.print("1)Get exercises 2)Get Diet 3)Get trainers  4)Get dieticians 5) Log out \nEnter Option: ");
                                 studop= sc.next();
 
                                 switch(studop){
@@ -217,11 +216,11 @@ public class App {
                                     course_regcontroller.get_diets(stud);
                                     break;
 
-                                    case "3" : //Check answer Script
+                                    case "3" : 
                                     course_regcontroller.get_trainers();
                                     break;
 
-                                    case "4" : //Check results
+                                    case "4" :
                                     course_regcontroller.get_dieticians();
                                     break;
 
@@ -231,9 +230,6 @@ public class App {
                                 
                                 
                                 }
-
-
-
                             }while(studop11.equals("3"));
                         }
                         
@@ -263,8 +259,8 @@ public class App {
                 String dietflag="3";
 
                 do{
-                    System.out.println("Dietician Menu:");
-                    System.out.println("1) Dietician Login \n2) Register Dietician\n3) Exit\nEnter Option");
+                    System.out.println("\n\nDietician Menu:");
+                    System.out.print("1)Dietician Login 2)Register Dietician 3)Exit\nEnter Option: ");
                     if(sc.hasNextLine() & dietcount!=1)
                     {
                     dietop1= sc.nextLine(); 
@@ -277,16 +273,16 @@ public class App {
                     switch(dietop1){
                         case "1": //login
                         int log;
-                        System.out.println("Enter Dietician ID      :");
+                        System.out.print("Enter Dietician ID: ");
                         diet.dieticianid= sc.nextLine(); 
-                        System.out.println("Enter Dietician Password:");
+                        System.out.print("Enter Dietician Password: ");
                         diet.password= sc.nextLine();
                         log=dietcontroller.login(diet);
                         String dietop,dietop11="3";
                         if(log==1){
                             do{
                                 System.out.println(" Logged In Dietician Menu:");
-                                System.out.println("1) Set Diet\n2) View Users\n3) Log out \nEnter Option:");
+                                System.out.print("1)Set Diet 2)View Users 3)Log out \nEnter Option: ");
                                 dietop= sc.next();
 
                                 switch(dietop){
@@ -295,7 +291,7 @@ public class App {
                                     break;
 
                                     case "2" : //Take Exam
-                                    dietcontroller.set_diet(diet.dieticianid);
+                                    dietcontroller.view_diet_users(diet.dieticianid);
                                     break;
 
                                     case "3" : //logout
@@ -316,8 +312,6 @@ public class App {
                         System.out.print("Exiting...");
                         System.exit(0);
                         break;
-
-
                     }
 
                 }while(dietflag.equals("3"));

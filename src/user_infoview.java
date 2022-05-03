@@ -15,7 +15,7 @@ public class user_infoview {
             
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","Omsainamo@1");
             Statement st = con.createStatement();
-            String select = "select * from trainer_user where trainer_id = " + trainer_id;
+            String select = "select * from trainer_user where trainerid = " + trainer_id;
            
             int flag=1;
             ResultSet rs = st.executeQuery(select);
@@ -25,8 +25,8 @@ public class user_infoview {
                 String userid = rs.getString("userid");
                 String exercise_plan=rs.getString("exercise_plan");
 
-                System.out.println("User Id     : "+userid);
-                System.out.println("Exercise Plan     : "+exercise_plan+"\n\n\n");
+                System.out.println("User Id       : "+userid);
+                System.out.println("Exercise Plan : "+exercise_plan+"\n");
             }
             if(flag!=11){
                 System.out.println("No Users\n\n");

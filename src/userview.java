@@ -29,14 +29,13 @@ public class userview {
                 String package_type=rs.getString("package_type");
                 String field=rs.getString("field");
 
-                System.out.println("userid         : "+userid);
+                System.out.println("userid      : "+userid);
                 System.out.println("Firstname   : "+firstName);
                 System.out.println("Lastname    : "+lastName);
                 System.out.println("PhoneNumber : "+phoneNumber);
-                System.out.println("package_type     : "+package_type);
-                System.out.println("field  : "+field+"\n\n");
+                System.out.println("package_type: "+package_type);
+                System.out.println("field       : "+field+"\n\n");
                 
-
             }
             con.close();
         }

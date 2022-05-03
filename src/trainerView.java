@@ -23,13 +23,12 @@ public class trainerView {
                 String lastName=rs.getString("lastName");
                 String phoneNumber=rs.getString("phoneNumber");
                 String field=rs.getString("field");
-                
 
-                System.out.println("userid         : "+trainerid);
-                System.out.println("Firstname   : "+firstName);
-                System.out.println("Lastname    : "+lastName);
-                System.out.println("PhoneNumber : "+phoneNumber);
-                System.out.println("field  : "+field+"\n\n");
+                System.out.println("Trainer ID  : "+trainerid);
+                System.out.println("First name  : "+firstName);
+                System.out.println("Last name   : "+lastName);
+                System.out.println("Phone Number: "+phoneNumber);
+                System.out.print("Field         : "+field+"\n");
             }
             con.close();
         }

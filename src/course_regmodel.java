@@ -27,7 +27,7 @@ public class course_regmodel {
             while(rs.next()){
                 flag=11;
                 String exercise_plan=rs.getString("exercise_plan");
-                System.out.println("Exercise Plan     : "+exercise_plan+"\n\n\n");
+                System.out.println("Exercise Plan: "+exercise_plan);
             }
             if(flag!=11){
                 System.out.println("No Plans\n\n");
@@ -57,7 +57,7 @@ public class course_regmodel {
             while(rs.next()){
                 flag=11;
                 String exercise_plan=rs.getString("diet_plan");
-                System.out.println("Diet Plan     : "+exercise_plan+"\n\n\n");
+                System.out.println("Diet Plan: "+exercise_plan);
             }
             if(flag!=11){
                 System.out.println("No Plans\n\n");
@@ -88,10 +88,10 @@ public class course_regmodel {
                 String field=rs.getString("field");
                 String ph=rs.getString("phoneNumber");
 
-                System.out.println(first);
-                System.out.println(last);
-                System.out.println(field);
-                System.out.println(ph + "\n\n");
+                System.out.println("First name  :" + first);
+                System.out.println("Last name   :" + last);
+                System.out.println("Field       :" + last);
+                System.out.print("Phone number  :" + ph + "\n\n");
             }
             if(flag!=11){
                 System.out.println("No Trainers\n\n");
@@ -121,9 +121,9 @@ public class course_regmodel {
                 String last=rs.getString("lastName");
                 String ph=rs.getString("phoneNumber");
 
-                System.out.println(first);
-                System.out.println(last);
-                System.out.println(ph + "\n\n");
+                System.out.println("First name  :" + first);
+                System.out.println("Last name   :" + last);
+                System.out.print("Phone number  :" + ph + "\n\n");
             }
             if(flag!=11){
                 System.out.println("No Dieticians\n\n");
